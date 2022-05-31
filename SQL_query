@@ -1,0 +1,162 @@
+# SQL Query
+
+ST_Buffer as way to keep geom
+
+query = f''' SELECT osm_id, "natural"
+
+osm_planet. plus ctrl space shows which variable should be in quotes
+
+Distinct values from ‘building column’:
+SELECT distinct(building)
+FROM planet_osm_polygon
+
+SELECT distinct(building)
+FROM planet_osm_polygon
+
+SELECT building FROM public.planet_osm_line; COUNT(building) FROM
+planet_osm_polygon
+
+GROUP BY building
+ORDER BY UPPER(building)
+
+SELECT distinct(building)
+FROM planet_osm_polygon
+
+SELECT building FROM public.planet_osm_line; COUNT(building) FROM
+planet_osm_polygon
+GROUP BY building
+ORDER BY UPPER(building)
+
+SELECT *
+FROM planet_osm_polygon
+WHERE planet_osm_polygon.building NOT in ('residential' FROM
+public.planet_osm_line; 'apartments' FROM public.planet_osm_line; 'house'
+FROM public.planet_osm_line; 'static_caravan' FROM public.planet_osm_line;
+'detached')
+
+SELECT distinct(aeroway)
+FROM planet_osm_polygon
+
+SELECT *
+FROM planet_osm_polygon
+WHERE planet_osm_polygon.aeroway in ('apron' FROM
+public.planet_osm_line; 'navigationaid' FROM public.planet_osm_line;
+'taxiway' FROM public.planet_osm_line; 'runway' FROM
+public.planet_osm_line; 'helipad' FROM public.planet_osm_line; 'terminal'
+FROM public.planet_osm_line; 'hanger' FROM public.planet_osm_line;
+'aerodrome')
+
+SELECT distinct("natural")
+FROM planet_osm_polygon
+
+SELECT distinct(z_order)
+FROM planet_osm_polygon
+
+SELECT "natural" FROM public.planet_osm_line; COUNT("natural") FROM
+planet_osm_polygon
+GROUP BY "natural"
+ORDER BY UPPER("natural")
+
+SELECT distinct(aeroway)
+FROM planet_osm_line
+
+SELECT distinct
+SELECT distinct osm_id
+SELECT distinct Access
+SELECT distinct "addr:housename"
+SELECT distinct "addr:housenumber"
+SELECT distinct(building)
+FROM planet_osm_polygon
+
+SELECT building, COUNT(building) FROM planet_osm_polygon
+GROUP BY building
+ORDER BY UPPER(building)
+
+SELECT *
+FROM planet_osm_polygon
+WHERE planet_osm_polygon.building NOT in ('residential', 'apartments',
+'house', 'static_caravan', 'detached')
+
+SELECT distinct(aeroway)
+FROM planet_osm_polygon
+
+SELECT *
+FROM planet_osm_polygon
+WHERE planet_osm_polygon.aeroway in ('apron', 'navigationaid', 'taxiway',
+'runway', 'helipad', 'terminal', 'hanger', 'aerodrome')
+
+SELECT distinct("natural")
+FROM planet_osm_polygon
+
+SELECT distinct(z_order)
+FROM planet_osm_polygon
+
+SELECT "natural", COUNT("natural") FROM planet_osm_polygon
+GROUP BY "natural"
+ORDER BY UPPER("natural")
+
+SELECT distinct(bridge)
+FROM planet_osm_line
+
+Select *
+FROM planet_osm_line
+WHERE water is NOT NULL
+
+SELECT *
+FROM planet_osm_polygon
+WHERE planet_osm_polygon.natural = 'water'
+
+SELECT * FROM planet_osm_polygon WHERE "natural" in ('bay', 'beach',
+'water', 'wetland', 'yes')
+OR leisure IS NOT NUll
+
+SELECT * FROM planet_osm_line WHERE water IS NOT NULL
+OR waterway IS NOT NULL
+
+SELECT *
+FROM planet_osm_point
+WHERE planet_osm_point."generator:source" IS NOT NULL
+
+SELECT *
+FROM planet_osm_point
+WHERE planet_osm_point."generator:source" = 'wind'
+
+SELECT *
+FROM planet_osm_line
+WHERE planet_osm_line."water" = 'river'
+SELECT water, COUNT(water) FROM planet_osm_polygon
+GROUP BY water
+ORDER BY UPPER(water)
+SELECT ST_SRID(way)
+FROM planet_osm_polygon
+LIMIT 1
+
+
+/* Queries for homework */
+/* residential */
+SELECT * FROM planet_osm_polygon
+WHERE (building IS NULL)
+OR building in ('residential', 'apartments', 'house', 'static_caravan',
+'detached', 'semidetached_house', 'yes')
+OR landuse in ('residential', 'Residential (Individual Dwelling Unit)',
+'Residential (Mobile Home)', 'Residential (Multiple Dwelling Unit)')
+OR place = 'town'
+/* non-residential */
+
+SELECT * FROM planet_osm_polygon
+WHERE building NOT in ('NULL', 'residential', 'apartments', 'house',
+'static_caravan', 'detached', 'semidetached_house', 'yes')
+SELECT ST_BUFFER(way, 450)
+FROM planet_osm_polygon
+WHERE building NOT in ('NULL', 'residential', 'apartments', 'house',
+'static_caravan', 'detached', 'semidetached_house', 'yes')
+/* Airports */
+SELECT * FROM planet_osm_polygon WHERE aeroway IS NOT NULL
+SELECT ST_BUFFER(way, 7500)
+FROM planet_osm_polygon WHERE aeroway IS NOT NULL
+SELECT ST_BUFFER(way, 150)
+FROM planet_osm_polygon WHERE water IS NOT NULL
+In PG Admin, use control + space to get autofill options. This is useful for
+determining if fields need quotes or not.
+SELECT * FROM planet_osm_polygon
+WHERE planet_osm_polygon. <- use control + space after the dot
